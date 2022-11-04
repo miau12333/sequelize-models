@@ -11,7 +11,7 @@ db.authenticate() // devuelve una promesa
   .then(() => console.log("Autenticación exitosa"))
   .catch((error) => console.log(error));
 
-db.sync() // devuelve una promesa
+db.sync({ force: true }) // devuelve una promesa
   .then(() => console.log("Base sincronizada"))
   .catch((error) => console.log(error));
 
