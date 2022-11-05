@@ -20,6 +20,15 @@ const Tasks = db.define("tasks", {
     field: "is_complete",
     defaultValue: false,
   },
+  userId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      key: "id",
+      model: "users",
+    },
+    field: "user_id",
+  },
 });
 
 module.exports = Tasks;

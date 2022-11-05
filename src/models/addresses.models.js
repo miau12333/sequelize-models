@@ -18,6 +18,15 @@ const Address = db.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        key: "id",
+        model: "users",
+      },
+      field: "user_id",
+    },
   },
   {
     timestamps: false,
