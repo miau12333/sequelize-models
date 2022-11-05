@@ -11,6 +11,39 @@ const getAllUsers = async (req, res) => {
   }
 };
 
+const getUserById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await UserServices.getById(id);
+    res.status(200).json(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const getUserWithAddres = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await UserServices.getUserJoinAddres(id);
+    res.status(200).json(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const getUserWithTasks = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await UserServices.getUserJoinTasks(id);
+    res.status(200).json(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   getAllUsers,
+  getUserById,
+  getUserWithAddres,
+  getUserWithTasks,
 };
