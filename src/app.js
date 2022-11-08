@@ -8,7 +8,7 @@ require("dotenv").config();
 
 const app = express();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000; // undefined
 
 db.authenticate() // devuelve una promesa
   .then(() => console.log("Autenticación exitosa"))
