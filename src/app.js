@@ -4,10 +4,11 @@ const initModels = require("./models/initModels");
 const db = require("./utils/database");
 // importo las rutas del usuario
 const userRoutes = require("./Routes/users.routes");
+require("dotenv").config();
 
 const app = express();
 
-const PORT = process.env.PUERTO;
+const PORT = process.env.PORT;
 
 db.authenticate() // devuelve una promesa
   .then(() => console.log("Autenticación exitosa"))
