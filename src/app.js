@@ -7,7 +7,7 @@ const userRoutes = require("./Routes/users.routes");
 
 const app = express();
 
-const PORT = 8000;
+const PORT = process.env.PUERTO;
 
 db.authenticate() // devuelve una promesa
   .then(() => console.log("Autenticación exitosa"))
@@ -25,4 +25,4 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1", userRoutes);
 
-app.listen(PORT, () => console.log("Servidor corriendo"));
+app.listen(PORT, () => console.log("Servidor corriendo en el puerto" + PORT));
